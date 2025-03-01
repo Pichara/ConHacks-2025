@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthAI Pro - Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="header-nav">
+            <div class="logo-container">
+                <div style="display: flex; align-items: center;">
+                    <img src="logo.png" alt="HealthAI Pro Logo" class="brand-logo" style="width: 75px; height: auto; margin-left: -150px;">
+                    <span style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; margin-left: 15px;">BioCheck AI</span>
+                </div>                
+            </div>
+            <div class="nav-controls">
+                <a href="aboutPage.html" class="nav-btn" aria-label="About">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <button class="nav-btn" aria-label="Contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-container" style="max-width: 500px; margin-top: 120px;">
+        <section class="upload-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Welcome Back!</h2>
+            <form class="health-assessment-form">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="checkbox-group" style="margin: 1rem 0;">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Sign In
+                    </button>
+                </div>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#forgot-password" style="color: var(--primary-color);">Forgot Password?</a>
+                    <p style="margin-top: 1rem;">Don't have an account? <a href="#signup" style="color: var(--primary-color);">Sign Up</a></p>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

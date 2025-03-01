@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FKj7GpzB4gc=",
+  "dgSpecHash": "loBVjFoLIOs=",
   "success": true,
-  "projectFilePath": "C:\\source\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
+  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\picha\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\lukas\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioCheck AI - Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <nav class="header-nav">
+            <div class="logo-container">
+                <div style="display: flex; align-items: center;">
+                    <img src="logo.png" alt="HealthAI Pro Logo" class="brand-logo" style="width: 75px; height: auto; margin-left: -150px;">
+                    <span style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; margin-left: 15px;">BioCheck AI</span>
+                </div>                
+            </div>
+            <div class="nav-controls">
+                <button class="nav-btn" aria-label="New Report" onclick="window.location.href='firstPage.html'">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>New Report</span>
+                </button>
+                <button class="nav-btn" aria-label="Profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content-container">
+        <!-- Welcome Section -->
+        <section class="dashboard-section">
+            <div class="welcome-banner">
+                <h1>Welcome Back, [User]!</h1>
+                <p>Your current health score: <span class="health-score">84/100</span></p>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Last Report</h3>
+                        <p>15 June 2024</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-weight"></i>
+                        <h3>Weight Trend</h3>
+                        <p>-2.3kg last month</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-running"></i>
+                        <h3>Activity Level</h3>
+                        <p>85% of goal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="dashboard-section">
+            <h2>Quick Actions</h2>
+            <div class="action-grid">
+                <a href="#upload" class="action-card" onclick="window.location.href='firstPage.html'">
+                    <i class="fas fa-file-upload"></i>
+                    <h3>Upload New Reports</h3>
+                    <p>Submit recent medical documents for analysis</p>
+                </a>
+                <a href="#history" class="action-card">
+                    <i class="fas fa-history"></i>
+                    <h3>View History</h3>
+                    <p>Access previous reports and comparisons</p>
+                </a>
+                <a href="#trends" class="action-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Health Trends</h3>
+                    <p>View long-term health metrics analysis</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Recent Reports -->
+        <section class="dashboard-section">
+            <h2>Recent Reports</h2>
+            <div class="report-list">
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Blood Analysis</h3>
+                        <span class="report-date">12 June 2024</span>
+                    </div>
+                    <div class="report-summary">
+                        <p>Key findings: Improved cholesterol levels, maintain vitamin D intake</p>
+                        <div class="report-status positive">
+                            <i class="fas fa-check-circle"></i>
+                            12% improvement
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Fitness Assessment</h3>
+                        <span class="report-date">5 June 2024</span>
+                    </div>
+                    <div class="report-summary">
+                        <p>Cardio efficiency increased, recommend strength training</p>
+                        <div class="report-status neutral">
+                            <i class="fas fa-info-circle"></i>
+                            Stable performance
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Tips Carousel -->
+        <section class="dashboard-section">
+            <h2>Personalized Health Tips</h2>
+            <div class="tips-carousel">
+                <div class="tip-card">
+                    <i class="fas fa-apple-alt"></i>
+                    <h3>Nutrition Tip</h3>
+                    <p>Increase fiber intake with more whole grains and vegetables</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-moon"></i>
+                    <h3>Sleep Advice</h3>
+                    <p>Aim for 7-8 hours of sleep with consistent bedtime</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-hand-holding-water"></i>
+                    <h3>Hydration</h3>
+                    <p>You're meeting 85% of daily hydration goals</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 BioCheck AI. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
