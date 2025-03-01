@@ -1,0 +1,74 @@
+﻿@model Dictionary<string, string>
+
+@{
+    ViewData["Title"] = "Health Analysis Report";
+}
+
+<!-- If Bootstrap is not already loaded in your layout, include these links -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Health Analysis Report</h1>
+    <div class="row">
+        <!-- Left-hand navigation with vertical tabs -->
+        <div class="col-md-3">
+            <div class="nav flex-column nav-pills" id="reportTabs" role="tablist" aria-orientation="vertical">
+                @foreach (var key in Model.Keys)
+                {
+                    <a class="nav-link @(Model.Keys.First() == key ? "active" : "")"
+                       id="@key-tab"
+                       data-toggle="pill"
+                       href="#@key"
+                       role="tab"
+                       aria-controls="@key"
+                       aria-selected="@(Model.Keys.First() == key ? "true" : "false")">
+                        @GetOptionDisplayName(key)
+                    </a>
+                }
+            </div>
+        </div>
+
+        <!-- Right-hand content area for the selected tab -->
+        <div class="col-md-9">
+            <div class="tab-content" id="reportTabsContent">
+                @foreach (var kvp in Model)
+                {
+                    <div class="tab-pane fade @(Model.Keys.First() == kvp.Key ? "show active" : "")"
+                         id="@kvp.Key"
+                         role="tabpanel"
+                         aria-labelledby="@kvp.Key-tab">
+                        @Html.Raw(kvp.Value)
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- If Bootstrap scripts are not already loaded, include these -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+@functions {
+    // Convert internal option names to user-friendly labels.
+    private string GetOptionDisplayName(string option)
+    {
+        switch (option)
+        {
+            case "nutrition":
+                return "Nutrition Suggestions";
+            case "fitness":
+                return "Fitness Plan";
+            case "details":
+                return "Detailed Analysis";
+            case "summary":
+                return "Summary Analysis";
+            case "generalAdvice":
+                return "General Health Insights";
+            case "furtherTesting":
+                return "Further Testing Suggestions";
+            default:
+                return option;
+        }
+    }
+}
