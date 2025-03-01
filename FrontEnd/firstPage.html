@@ -1,67 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthAI Doctor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>HealthAI Pro - Comprehensive Health Analysis</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="container">
-        <header class="header">
-            <img src="logo.png" alt="HealthAI Doctor" class="logo">
-            <nav class="nav-buttons">
-                <button class="nav-button">
+    <!-- Header Section -->
+    <header class="main-header">
+        <nav class="header-nav">
+            <div class="logo-container">
+                <div style="display: flex; align-items: center;">
+                    <img src="logo.png" alt="HealthAI Pro Logo" class="brand-logo" style="width: 75px; height: auto; margin-left: -150px;">
+                    <span style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif;">BioCheck AI</span>
+                </div>                
+            </div>
+            <div class="nav-controls">
+                <button class="nav-btn" aria-label="About">
                     <i class="fas fa-info-circle"></i>
-                    About
+                    <span>About</span>
                 </button>
-                <button class="nav-button">
+                <button class="nav-btn" aria-label="Contact">
                     <i class="fas fa-envelope"></i>
-                    Contact
+                    <span>Contact</span>
                 </button>
-                <button class="nav-button">
-                    <i class="fas fa-user-md"></i>
-                    Doctors
+                <button class="nav-btn" aria-label="Login">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
                 </button>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        <main class="main-content">
-            <section class="upload-section">
-                <div class="drag-drop-area">
-                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
-                    <h2>Drag & Drop Medical Files</h2>
-                    <p>or click to upload</p>
-                    <div class="supported-files">
-                        Supported formats: PDF, JPG, PNG
-                    </div>
-                </div>
-            </section>
+    <!-- Main Content Container -->
+    <main class="content-container">
+        <!-- File Upload Section -->
+        <section class="upload-section" id="fileUpload">
+            <div class="drag-drop-zone" role="region" aria-labelledby="dropZoneTitle">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <h2 id="dropZoneTitle">Upload Medical Reports</h2>
+                <p>Supported formats: PDF, JPG, PNG</p>
+            </div>
+        </section>
 
-            <section class="chat-section">
-                <div class="chat-history">
-                    <div class="chat-message bot-message">
-                        Hello! I'm HealthAI Doctor. Please upload your medical documents to get started.
+        <!-- Health Metrics Form -->
+        <form class="health-assessment-form" id="healthForm">
+            <!-- Optional Health Metrics -->
+            <fieldset class="metrics-group">
+                <legend>Optional Health Metrics</legend>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" step="0.1">
                     </div>
-                    <div class="chat-message user-message">
-                        I've uploaded my recent blood test results.
+                    
+                    <div class="input-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" name="height">
                     </div>
-                    <div class="chat-message bot-message">
-                        Thank you! Analyzing your documents now...
+
+                    <div class="input-group">
+                        <label for="bodyFat">Body Fat (%)</label>
+                        <input type="number" id="bodyFat" name="bodyFat" step="0.1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cholesterol">Cholesterol (mg/dL)</label>
+                        <input type="number" id="cholesterol" name="cholesterol">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="alcohol">Alcohol Consumption (units/week)</label>
+                        <input type="number" id="alcohol" name="alcohol">
                     </div>
                 </div>
-                <div class="chat-input">
-                    <textarea placeholder="Type your message here..." rows="1"></textarea>
-                    <button class="send-button">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+
+                <!-- Lifestyle Factors -->
+                <div class="lifestyle-section">
+                    
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <input type="radio" id="Male" name="gender" value="Male">
+                            <label for="Male">Male</label>
+                            <input type="radio" id="Female" name="gender" value="Female">
+                            <label for="Female">Female</label>
+                            <input type="radio" id="Other" name="gender" value="Other">
+                            <label for="Other">Other</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Smoking Status</label>
+                        <div class="radio-group">
+                            <input type="radio" id="smokerYes" name="smoking" value="yes">
+                            <label for="smokerYes">Smoker</label>
+                            <input type="radio" id="smokerNo" name="smoking" value="no">
+                            <label for="smokerNo">Non-smoker</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="allergies">Allergies</label>
+                        <textarea id="allergies" name="allergies" rows="2"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mentalHealth">Mental Health Status</label>
+                        <select id="mentalHealth" name="mentalHealth">
+                            <option value="excellent">Excellent</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                            <option value="poor">Poor</option>
+                        </select>
+                    </div>
                 </div>
-            </section>
-        </main>
-    </div>
+            </fieldset>
+
+            <!-- Report Selection -->
+            <fieldset class="report-selection">
+                <legend>Generate Reports</legend>
+                <div class="checkbox-grid">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="bloodReport" name="reports" value="blood">
+                        <label for="bloodReport">Blood Analysis Report</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="fitnessReport" name="reports" value="fitness">
+                        <label for="fitnessReport">Fitness Assessment</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="nutritionReport" name="reports" value="nutrition">
+                        <label for="nutritionReport">Nutrition Plan</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="mentalReport" name="reports" value="mental">
+                        <label for="mentalReport">Mental Health Analysis</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Form Submission -->
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-chart-line"></i>
+                    Generate Comprehensive Report
+                </button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>
