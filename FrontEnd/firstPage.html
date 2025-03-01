@@ -14,7 +14,7 @@
             <div class="logo-container">
                 <div style="display: flex; align-items: center;">
                     <img src="logo.png" alt="HealthAI Pro Logo" class="brand-logo" style="width: 75px; height: auto; margin-left: -150px;">
-                    <span style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif;">BioCheck AI</span>
+                    <span style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; margin-left: 15px;;">BioCheck AI</span>
                 </div>                
             </div>
             <div class="nav-controls">
@@ -83,47 +83,99 @@
                     </div>
                 </div>
 
-                <!-- Lifestyle Factors -->
-                <div class="lifestyle-section">
-                    
-                    <div class="input-group">
-                        <label>Gender</label>
-                        <div class="radio-group">
-                            <input type="radio" id="Male" name="gender" value="Male">
-                            <label for="Male">Male</label>
-                            <input type="radio" id="Female" name="gender" value="Female">
-                            <label for="Female">Female</label>
-                            <input type="radio" id="Other" name="gender" value="Other">
-                            <label for="Other">Other</label>
-                        </div>
+                <style>
+                    .input-row {
+                      display: flex;            
+                      align-items: flex-start;  
+                      gap: 2rem;             
+                    }
+                  
+                    .input-column label {
+                      display: block;
+                      margin-bottom: 0.5rem;    
+                    }
+                  </style>
+                  
+                  <div class="input-row">
+                    <div class="input-column">
+                      <label>Gender</label>
+                      <div class="radio-group">
+                        <input type="radio" id="Male" name="gender" value="Male">
+                        <label for="Male">Male</label>
+                        <input type="radio" id="Female" name="gender" value="Female">
+                        <label for="Female">Female</label>
+                        <input type="radio" id="Other" name="gender" value="Other">
+                        <label for="Other">Other</label>
+                      </div>
                     </div>
-
-                    <div class="input-group">
-                        <label>Smoking Status</label>
-                        <div class="radio-group">
-                            <input type="radio" id="smokerYes" name="smoking" value="yes">
-                            <label for="smokerYes">Smoker</label>
-                            <input type="radio" id="smokerNo" name="smoking" value="no">
-                            <label for="smokerNo">Non-smoker</label>
-                        </div>
+                  
+                    <div class="input-column" margin-left: 50%;>
+                      <label>Smoking Status</label>
+                      <div class="radio-group">
+                        <input type="radio" id="smokerYes" name="smoking" value="yes">
+                        <label for="smokerYes">Smoker</label>
+                        <input type="radio" id="smokerNo" name="smoking" value="no">
+                        <label for="smokerNo">Non-smoker</label>
+                      </div>
                     </div>
+                  </div>          
 
                     <div class="input-group">
                         <label for="allergies">Allergies</label>
                         <textarea id="allergies" name="allergies" rows="2"></textarea>
                     </div>
+                    
+                    <br>
+                    <!-- Mental Health & Workouts side by side, each with a minimum width -->
+<div style="display: flex; align-items: center; gap: 2rem;">
+  
+    <!-- Mental Health -->
+    <div style="
+         display: flex; 
+         align-items: center; 
+         gap: 0.5rem; 
+         min-width: 250px;">
+      <label for="mentalHealth" style="white-space: nowrap;">Mental Health Status</label>
+      <select id="mentalHealth" name="mentalHealth" style="min-width: 240px; min-height: 40px;">
+        <option value="excellent">Excellent</option>
+        <option value="good">Good</option>
+        <option value="fair">Fair</option>
+        <option value="poor">Poor</option>
+      </select>
+    </div>
+  
+    <!-- Weekly Workouts -->
+    <div style="
+         display: flex;
+         margin-left: 50px; 
+         align-items: center; 
+         gap: 0.5rem; 
+         min-width: 300px;">
+      <label for="weekWorkouts" style="white-space: nowrap;">
+        How many workouts would you like to perform? (Weekly)
+      </label>
+      <select id="weekWorkouts" name="weekWorkouts" style="min-width: 150px; min-height: 40px;">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  
 
-                    <div class="input-group">
-                        <label for="mentalHealth">Mental Health Status</label>
-                        <select id="mentalHealth" name="mentalHealth">
-                            <option value="excellent">Excellent</option>
-                            <option value="good">Good</option>
-                            <option value="fair">Fair</option>
-                            <option value="poor">Poor</option>
-                        </select>
-                    </div>
+                <div class="input-group">
+                    <label for="additional info">Additional Info</label>
+                    <textarea id="additional info" name="additional info" rows="2"></textarea>
                 </div>
+                
             </fieldset>
+
+            
 
             <!-- Report Selection -->
             <fieldset class="report-selection">

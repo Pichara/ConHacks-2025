@@ -136,6 +136,7 @@ legend {
 .input-group {
     display: flex;
     flex-direction: column;
+    width: auto;
     gap: 0.5rem;
 }
 
