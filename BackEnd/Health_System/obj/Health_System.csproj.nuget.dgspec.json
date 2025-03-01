@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Health_System.csproj": {}
+    "C:\\source\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Health_System.csproj": {
+    "C:\\source\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Health_System.csproj",
+        "projectUniqueName": "C:\\source\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
         "projectName": "Health_System",
-        "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Health_System.csproj",
-        "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\obj\\",
+        "projectPath": "C:\\source\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
+        "packagesPath": "C:\\Users\\picha\\.nuget\\packages\\",
+        "outputPath": "C:\\source\\ConHacks-2025\\BackEnd\\Health_System\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\picha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -75,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

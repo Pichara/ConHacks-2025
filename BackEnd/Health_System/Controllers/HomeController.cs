@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -45,6 +46,8 @@ namespace Health_System.Controllers
             string height = Request.Form["Height"];
             string allergies = Request.Form["Allergies"];
             string medicalConditions = Request.Form["MedicalConditions"];
+            string country = Request.Form["Country"];
+            string city = Request.Form["City"];
 
             // Retrieve the selected analysis options.
             var selectedOptions = Request.Form["Options"];
@@ -72,7 +75,7 @@ namespace Health_System.Controllers
             foreach (var option in selectedOptions)
             {
                 // Build a detailed prompt for this analysis option.
-                string prompt = BuildPrompt(option, age, weight, height, allergies, medicalConditions);
+                string prompt = BuildPrompt(option, age, weight, height, allergies, medicalConditions, country, city);
                 prompt = prompt + " do not use ```html, do not write patient infromation do not write ``` and put complete and great deatiles and information do your best";
                 tasks.Add(ProcessAnalysisOptionAsync(option, prompt, base64Image));
             }
@@ -146,7 +149,7 @@ namespace Health_System.Controllers
         /// <summary>
         /// Builds a detailed and comprehensive prompt based on the selected analysis option and the user’s details.
         /// </summary>
-        private string BuildPrompt(string option, string age, string weight, string height, string allergies, string medicalConditions)
+        private string BuildPrompt(string option, string age, string weight, string height, string allergies, string medicalConditions, string country, string city)
         {
             // Create a summary of the user's details.
             string userDetails = $"Age: {age}, Weight: {weight} kg, Height: {height} cm, Allergies: {(string.IsNullOrWhiteSpace(allergies) ? "None" : allergies)}";
@@ -161,11 +164,11 @@ namespace Health_System.Controllers
                 case "nutrition":
                     return $"You are an expert nutritionist with extensive experience in biochemical and metabolic health analysis. The user provided these details: {userDetails}. They have uploaded a lab report image containing vital nutritional markers such as vitamin levels, mineral balances, and metabolic indicators. Please provide a thorough and comprehensive nutritional analysis. Your answer should include identification of any deficiencies, explanations of abnormal values, and tailored dietary recommendations with specific food and supplement suggestions. Format your answer as an HTML snippet with inline CSS styling (using clear headings and paragraphs) without extra HTML boilerplate.";
                 case "fitness":
-                    return $"You are a top-tier fitness coach and physiologist. The user details are: {userDetails}. Along with these details, they have provided a lab report image that includes key indicators of muscle health, cardiovascular performance, and metabolic function. Develop a comprehensive, personalized fitness plan that covers exercise routines, strength and endurance training, and risk management strategies. Provide detailed explanations for each recommendation and format your response as an HTML snippet with inline CSS (using headings and paragraphs) to ensure clarity.";
+                    return $"You are a top-tier fitness coach and physiologist. The user details are: {userDetails}. Along with these details, they have provided a lab report image that includes key indicators of muscle health, cardiovascular performance, and metabolic function. Develop a comprehensive, personalized fitness plan that covers exercise routines, strength and endurance training, and risk management strategies. Find some good recipes too in the intenet based in the user needs. Provide detailed explanations for each recommendation and format your response as an HTML snippet with inline CSS (using headings and paragraphs) to ensure clarity.";
                 case "details":
-                    return $"You are a seasoned medical doctor specializing in laboratory diagnostics. The user’s details are as follows: {userDetails}. They have uploaded a lab report image with multiple diagnostic parameters. Conduct an in-depth analysis of every section of the report, explaining the significance of each measurement, what constitutes normal versus abnormal values, and any potential clinical implications. Present your analysis in a structured format using an HTML snippet with inline CSS styling (headings, paragraphs) to make the content clear and professional.";
+                    return $"You are a seasoned medical doctor specializing in laboratory diagnostics. The user’s details are as follows: {userDetails}. They have uploaded a lab report image with multiple diagnostic parameters. Conduct an in-depth analysis of every section of the report, explaining the significance of each measurement, what constitutes normal versus abnormal values, and any potential clinical implications. Find the best medical clinics in {country},{city} for this problem and display on it too and implement it. Present your analysis in a structured format using an HTML snippet with inline CSS styling (headings, paragraphs) to make the content clear and professional.";
                 case "summary":
-                    return $"You are an experienced clinician known for your ability to succinctly summarize complex lab reports. The user’s information is: {userDetails}. With the provided lab report image, produce a concise yet informative summary that highlights key findings, pinpoints any abnormal values, and gives an overall health status assessment. Your summary should be formatted as an HTML snippet with inline CSS styling (using headings and paragraphs) for easy reading.";
+                    return $"You are an experienced clinician known for your ability to succinctly summarize complex lab reports. The user’s information is: {userDetails}. With the provided lab report image, produce a concise yet informative summary that highlights key findings, pinpoints any abnormal values, and gives an overall health status assessment. Also, search in the internet a youtube video about nutrition to related to what the user needs: {userDetails}, implement this in the HTML. Your summary should be formatted as an HTML snippet with inline CSS styling (using headings and paragraphs) for easy reading.";
                 case "generalAdvice":
                     return $"You are a trusted health advisor with expertise in holistic wellness. The user’s details: {userDetails} are provided along with their lab report image. Offer broad, personalized health insights and lifestyle recommendations based on the lab data. Explain how the lab findings relate to overall health and suggest actionable tips for improving well-being. Ensure your response is detailed, using an HTML snippet with inline CSS styling (headings and paragraphs) for clarity and professional presentation.";
                 case "furtherTesting":
@@ -176,3 +179,4 @@ namespace Health_System.Controllers
         }
     }
 }
+
