@@ -1,181 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthAI Doctor</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        body {
-            background: #f0f4f8;
-            color: #2d3748;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #3182ce;
-        }
-
-        .nav-buttons button {
-            margin-left: 1rem;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 8px;
-            background: #3182ce;
-            color: white;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .nav-buttons button:hover {
-            opacity: 0.9;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            height: 70vh;
-        }
-
-        .upload-section {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .drag-drop-area {
-            border: 2px dashed #cbd5e0;
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .drag-drop-area:hover {
-            border-color: #3182ce;
-            background: #f7fafc;
-        }
-
-        .upload-icon {
-            font-size: 2.5rem;
-            color: #3182ce;
-            margin-bottom: 1rem;
-        }
-
-        .chat-section {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-history {
-            flex-grow: 1;
-            overflow-y: auto;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f7fafc;
-            border-radius: 8px;
-        }
-
-        .chat-message {
-            margin-bottom: 1rem;
-            padding: 0.75rem;
-            border-radius: 8px;
-            max-width: 80%;
-        }
-
-        .user-message {
-            background: #3182ce;
-            color: white;
-            margin-left: auto;
-        }
-
-        .bot-message {
-            background: #e2e8f0;
-            margin-right: auto;
-        }
-
-        .chat-input {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .chat-input textarea {
-            flex-grow: 1;
-            padding: 0.75rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 8px;
-            resize: none;
-        }
-
-        .send-button {
-            padding: 0.75rem 1.5rem;
-            background: #3182ce;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .send-button:hover {
-            opacity: 0.9;
-        }
-
-        .supported-files {
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            color: #718096;
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <header class="header">
-            <div class="logo">HealthAI Doctor</div>
+            <img src="logo.png" alt="HealthAI Doctor" class="logo">
             <nav class="nav-buttons">
-                <button>About</button>
-                <button>Contact</button>
+                <button class="nav-button">
+                    <i class="fas fa-info-circle"></i>
+                    About
+                </button>
+                <button class="nav-button">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </button>
+                <button class="nav-button">
+                    <i class="fas fa-user-md"></i>
+                    Doctors
+                </button>
             </nav>
         </header>
 
