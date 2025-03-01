@@ -87,7 +87,7 @@
                     .input-row {
                       display: flex;            
                       align-items: flex-start;  
-                      gap: 2rem;             
+                      gap: 6rem;             
                     }
                   
                     .input-column label {
@@ -109,7 +109,7 @@
                       </div>
                     </div>
                   
-                    <div class="input-column" margin-left: 50%;>
+                    <div class="input-column">
                       <label>Smoking Status</label>
                       <div class="radio-group">
                         <input type="radio" id="smokerYes" name="smoking" value="yes">
@@ -166,6 +166,40 @@
     </div>
   </div>
   <br>
+
+  <!-- Country & City side by side, matching other fields' style -->
+<div style="display: flex; align-items: center; gap: 2rem;">
+  
+    <!-- Country -->
+    <div style="
+         display: flex; 
+         align-items: center; 
+         gap: 0.5rem; 
+         min-width: 250px;">
+      <label for="country" style="white-space: nowrap;">Country</label>
+      <input type="text" 
+             id="country" 
+             name="country" 
+             placeholder="Enter Country" 
+             style="min-width: 240px; min-height: 40px;">
+    </div>
+  
+    <!-- City -->
+    <div style="
+         display: flex; 
+         margin-left: 50px; 
+         align-items: center; 
+         gap: 0.5rem; 
+         min-width: 300px;">
+      <label for="city" style="white-space: nowrap;">City</label>
+      <input type="text" 
+             id="city" 
+             name="city" 
+             placeholder="Enter City" 
+             style="min-width: 150px; min-height: 40px;">
+    </div>
+  </div>
+  
   
 
                 <div class="input-group">
