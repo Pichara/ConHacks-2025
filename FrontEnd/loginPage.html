@@ -13,7 +13,9 @@
             <div class="logo-container">
                 <div style="display: flex; align-items: center;">
                     <img src="logo.png" alt="HealthAI Pro Logo" class="brand-logo" style="width: 75px; height: auto; margin-left: -150px;">
-                    <span style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; margin-left: 15px;">BioCheck AI</span>
+                    <span style="font-size: 24px; font-weight: bold; font-family: 'Raleway', sans-serif; margin-left: 15px; color: #57a9e3;">
+                        BioCheck AI
+                    </span>
                 </div>                
             </div>
             <div class="nav-controls">
@@ -21,7 +23,7 @@
                     <i class="fas fa-info-circle"></i>
                     <span>About</span>
                 </a>
-                <button class="nav-btn" aria-label="Home" href='landingPage.html'>
+                <button class="nav-btn" aria-label="Home" onclick="window.location.href='landingPage.html'">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </button>
@@ -48,11 +50,18 @@
                     <label for="rememberMe">Remember me</label>
                 </div>
 
+                <!-- Email/Password Login -->
                 <div class="form-actions">
-                    <a href="firstPage.html" class="submit-btn">
-                        <i class="fas fa-sign-in-alt"></i>
-                        Sign In
-                    </a>
+                    <button type="button" id="loginWithEmail" class="submit-btn">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                </div>
+
+                <!-- Google Login -->
+                <div class="form-actions">
+                    <button type="button" id="loginWithGoogle" class="submit-btn">
+                        <i class="fab fa-google"></i> Sign In with Google
+                    </button>
                 </div>
 
                 <div style="text-align: center; margin-top: 1.5rem;">

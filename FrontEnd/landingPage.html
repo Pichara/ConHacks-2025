@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioCheck AI - Smart Health Analysis</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"></script>
+    <script defer src="firebase.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -14,7 +18,9 @@
             <div class="logo-container">
                 <div style="display: flex; align-items: center;">
                     <img src="logo.png" alt="BioCheck AI Logo" class="brand-logo" style="width: 75px; height: auto; margin-left: -150px;">
-                    <span style="font-size: 24px; font-weight: bold; font-family: Arial, sans-serif; margin-left: 15px;">BioCheck AI</span>
+                    <span style="font-size: 24px; font-weight: bold; font-family: 'Raleway', sans-serif; margin-left: 15px; color: #57a9e3;">
+                        BioCheck AI
+                    </span>
                 </div>                
             </div>
             <div class="nav-controls">
@@ -26,7 +32,7 @@
                     <i class="fas fa-comments"></i>
                     <span>Testimonials</span>
                 </a>
-                <a href="loginPage.html" class="nav-btn">
+                <a href="loginPage.html" class="nav-btn" id="loginButton">
                     <i class="fas fa-sign-in-alt"></i>
                     <span>Login</span>
                 </a>
@@ -43,7 +49,7 @@
                 <h1>Transform Your Health with AI-Powered Insights</h1>
                 <p>Get comprehensive health analysis and personalized recommendations in minutes</p>
                 <div class="cta-buttons">
-                    <a href="loginPage.html" class="cta-primary">Start Free Trial</a>
+                    <a href="loginPage.html" class="cta-primary" id="startTrialButton">Start Free Trial</a>
                     <a href="#demo" class="cta-secondary">Watch Demo</a>
                 </div>
             </div>
@@ -153,5 +159,18 @@
             <p>&copy; 2025 BioCheck AI. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        firebase.auth().onAuthStateChanged((user) => {
+            const loginButton = document.getElementById("loginButton");
+            const startTrialButton = document.getElementById("startTrialButton");
+
+            if (user) {
+                // If logged in, change Login button to Profile
+                loginButton.href = "homePage.html";
+                loginButton.innerHTML = `<i class="fas fa-user"></i><span>Profile</span>`;
+            }
+        });
+    </script>
 </body>
 </html>
