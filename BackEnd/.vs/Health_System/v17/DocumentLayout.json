@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\views\\home\\report.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\views\\home\\report.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -19,12 +31,8 @@
       "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\views\\home\\report.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\views\\home\\report.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|solutionrelative:health_system\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0187E0F8-B521-438A-B20D-15AAE335FB34}|Health_System\\Health_System.csproj|c:\\users\\moham\\onedrive\\desktop\\health_system\\health_system\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -38,19 +46,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Health_System\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Health_System\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-01T12:33:31.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Report.cshtml",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Report.cshtml",
               "RelativeDocumentMoniker": "Health_System\\Views\\Home\\Report.cshtml",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Report.cshtml",
               "RelativeToolTip": "Health_System\\Views\\Home\\Report.cshtml",
-              "ViewState": "AgIAADIAAAAAAAAAAAAQwEoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-01T06:58:12.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Health_System\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Health_System\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAKwEAAAAAAAAAAAwwNQEAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-01T03:47:31.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Health_System\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Health_System\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T08:45:22.659Z",
               "EditorCaption": ""
             },
             {
@@ -61,14 +108,14 @@
               "RelativeDocumentMoniker": "Health_System\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Health_System\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-01T06:25:32.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\appsettings.json",
               "RelativeDocumentMoniker": "Health_System\\appsettings.json",
@@ -81,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Program.cs",
               "RelativeDocumentMoniker": "Health_System\\Program.cs",
@@ -94,41 +141,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Health_System\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Health_System\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAFsBAAAAAAAAAAAwwGIBAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T03:47:47.866Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\css\\styles.css",
               "RelativeDocumentMoniker": "Health_System\\wwwroot\\css\\styles.css",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\css\\styles.css",
               "RelativeToolTip": "Health_System\\wwwroot\\css\\styles.css",
-              "ViewState": "AgIAANAAAAAAAAAAAAAAwPIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANoAAAAAAAAAAAAmwAQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-03-01T05:49:09.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Health_System\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Health_System\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAuwJIAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-01T03:47:31.35Z",
               "EditorCaption": ""
             }
           ]

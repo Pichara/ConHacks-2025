@@ -1,168 +1,1237 @@
-﻿@{
-    ViewData["Title"] = "Health Analysis Tool";
-}
+﻿@* Index.cshtml *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BioCheck AI - Comprehensive Health Analysis</title>
 
-<!-- Custom Styles -->
-<style>
-    body {
-        background-color: #f5f7fa;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
-    .container {
-        margin: 40px auto;
-        max-width: 900px;
-        background-color: #ffffff;
-        padding: 30px 40px;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+    <!-- Google Fonts: Montserrat & Poppins for a modern vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap"
+          rel="stylesheet" />
 
-    h1, h3 {
-        text-align: center;
-        color: #333;
-    }
-
-    .lead {
-        text-align: center;
-        color: #555;
-        margin-bottom: 30px;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    label {
-        font-weight: 600;
-    }
-
-    .form-control, .form-control-file {
-        border-radius: 5px;
-        box-shadow: none;
-        border: 1px solid #ccc;
-    }
-
-    .analysis-options {
-        background-color: #f0f8ff;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-
-        .analysis-options .form-check {
-            margin: 10px 0;
+    <!-- Custom CSS -->
+    <style>
+        /* ---------- Base Color / Brand Vars ---------- */
+        :root {
+            --brand-teal: #1abc9c;
+            --brand-teal-dark: #148f77;
+            --brand-green: #2ecc71;
+            /* For accent or secondary highlights */
+            --accent-pink: #ec4899;
+            --gray-light: #f5f7fa;
+            --gray-dark: #1e1e1e;
         }
 
-    .btn-primary {
-        background-color: #007bff;
-        border: none;
-        font-size: 1.1em;
-        padding: 10px 30px;
-        border-radius: 5px;
-    }
-
-        .btn-primary:hover {
-            background-color: #0069d9;
+        /* ---------- Body & Typography ---------- */
+        body {
+            font-family: 'Montserrat', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffffff 30%, #f7f9fa 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s, color 0.4s;
         }
-    @@media (max-width: 768px) {
-        .row > div
 
-    {
-        margin-bottom: 15px;
-    }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
 
-    }
-</style>
+        /* Smooth transitions for all elements */
+        * {
+            transition: all 0.3s ease;
+        }
 
-<div class="container">
-    <h1>Health Analysis Tool</h1>
-    <p class="lead">Enter your details, upload your lab report, and select analysis options.</p>
-    <form asp-action="AnalyzeTest" method="post" enctype="multipart/form-data">
-        <!-- Personal Details Section -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="Age">Age</label>
-                    <input type="number" name="Age" id="Age" class="form-control" placeholder="Enter your age" required />
-                </div>
+        /* ---------- Dark Mode Overrides ---------- */
+        .dark-mode {
+            background: linear-gradient(135deg, #141414 30%, #222 100%) !important;
+            color: #ddd !important;
+        }
+
+            .dark-mode a,
+            .dark-mode h1,
+            .dark-mode h2,
+            .dark-mode h3,
+            .dark-mode h4,
+            .dark-mode h5 {
+                color: #fff !important;
+            }
+
+            .dark-mode .card {
+                background-color: #2a2a2a !important;
+                color: #ddd !important;
+                border-color: #444 !important;
+            }
+
+            .dark-mode .accordion .card-body,
+            .dark-mode .accordion .collapse.show {
+                background-color: #2a2a2a !important;
+                color: #ddd !important;
+            }
+
+            .dark-mode .card-header {
+                background-color: #2f2f2f !important;
+                border-bottom: 1px solid #444 !important;
+                color: #ddd !important; /* Ensure dark-mode card header text is #ddd */
+            }
+
+            .dark-mode .btn.btn-light {
+                background-color: #2a2a2a !important;
+                color: #ddd;
+                border: 1px solid #555;
+            }
+
+            .dark-mode .form-control,
+            .dark-mode .custom-select,
+            .dark-mode .form-check-input {
+                background-color: #2a2a2a;
+                color: #ddd;
+                border: 1px solid #555;
+            }
+
+            .dark-mode .drag-drop-zone {
+                border-color: #555 !important;
+            }
+
+                .dark-mode .drag-drop-zone:hover {
+                    background-color: #333 !important;
+                }
+
+            .dark-mode .submit-btn {
+                background-color: var(--brand-teal) !important;
+                color: #fff !important;
+            }
+            /* Dark mode: ensure accordion headings are fully visible */
+            .dark-mode .accordion .card-header {
+                background-color: #2f2f2f !important; /* dark background */
+                border-bottom: 1px solid #444 !important;
+            }
+            /* The clickable text for collapsed or expanded headings */
+            .dark-mode .accordion .btn-link {
+                color: #ddd !important; /* Light gray text for headings */
+            }
+                /* Optional: hover or focus states for headings */
+                .dark-mode .accordion .btn-link:hover,
+                .dark-mode .accordion .btn-link:focus {
+                    color: #fff !important; /* Even brighter on hover/focus */
+                }
+
+        /* ---------- Header & Nav ---------- */
+        .main-header {
+            background: linear-gradient(to right, var(--brand-teal), var(--brand-green));
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .dark-mode .main-header {
+            background: linear-gradient(to right, #1e1e1e, #333);
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .brand-logo {
+            width: 55px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .brand-text {
+            font-size: 1.6rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        /* Nav Controls (buttons) */
+        .nav-controls .btn-light {
+            margin-left: 10px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+            .nav-controls .btn-light:hover {
+                background-color: #f2f2f2;
+                transform: translateY(-1px);
+            }
+        /* Dark Mode Toggle specifically */
+        #toggleDarkMode {
+            background-color: #fff !important;
+            color: #333 !important;
+        }
+
+            #toggleDarkMode:hover {
+                background-color: #f2f2f2 !important;
+            }
+
+        /* ---------- Main Container & Cards ---------- */
+        .container {
+            max-width: 1200px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+            .card:hover {
+                box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            }
+
+        .card-header {
+            background-color: #fff;
+            border-bottom: none;
+            border-radius: 12px 12px 0 0;
+            padding: 1rem 1.5rem;
+            font-size: 1.25rem;
+        }
+
+            .card-header i {
+                margin-right: 0.5rem;
+                color: var(--accent-pink);
+            }
+
+        .card-title {
+            margin-bottom: 0;
+            font-size: 1.3rem;
+            display: inline-block;
+            color: #333;
+        }
+
+        .card-body {
+            border-radius: 0 0 12px 12px;
+            padding: 1.5rem;
+        }
+
+            .card-body h5 {
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+
+                .card-body h5 i {
+                    margin-right: 0.5rem;
+                }
+
+        /* ---------- Drag & Drop Zone ---------- */
+        .drag-drop-zone {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+            .drag-drop-zone i.upload-icon {
+                color: var(--brand-teal);
+            }
+
+            .drag-drop-zone:hover {
+                background-color: #f8fdfc;
+                border-color: var(--brand-teal);
+                transform: scale(1.02);
+            }
+
+        #selectedFiles {
+            margin-top: 1rem;
+        }
+
+        .file-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .file-item:last-child {
+                border-bottom: none;
+            }
+
+        .remove-file {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* ---------- Form Elements ---------- */
+        .form-label {
+            font-weight: 500;
+        }
+
+        .form-control {
+            border-radius: 6px;
+        }
+
+        .form-check-label {
+            margin-left: 4px;
+        }
+
+        .form-check-input {
+            width: 1.2rem;
+            height: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* ---------- Accordion ---------- */
+        .accordion .card {
+            border-radius: 0;
+            margin-bottom: 0;
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        .accordion .card-header {
+            background-color: #fbfbfb;
+            border-radius: 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: none;
+            font-size: 1rem;
+        }
+
+        .accordion .btn-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+            .accordion .btn-link:hover {
+                text-decoration: underline;
+            }
+
+        .accordion .collapse.show {
+            background-color: #fff;
+        }
+
+        /* ---------- Submit Button ---------- */
+        .form-actions {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, var(--brand-teal), var(--brand-green));
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+            .submit-btn i {
+                margin-right: 6px;
+            }
+
+            .submit-btn:hover {
+                background: linear-gradient(to right, var(--brand-teal-dark), var(--brand-teal));
+                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+                transform: translateY(-2px);
+            }
+
+        /* ---------- Loading Overlay (Glassmorphism) ---------- */
+        #loadingOverlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Glass effect: semi-transparent white + blur */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(6px);
+        }
+
+        .dark-mode #loadingOverlay {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15%;
+            align-items: flex-start;
+            color: #333;
+        }
+
+        .dark-mode .overlay-container {
+            color: #fff;
+        }
+
+        .left-panel h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            white-space: nowrap;
+        }
+
+        .left-panel p {
+            font-size: 1.2rem;
+        }
+
+        #chosenOptions {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+            #chosenOptions li {
+                font-size: 1rem;
+                padding: 0.5rem 0;
+                color: #333;
+                display: flex;
+                align-items: center;
+                transition: color 0.5s;
+                white-space: nowrap;
+            }
+
+        .dark-mode #chosenOptions li {
+            color: #fff;
+        }
+
+        #chosenOptions li .check-icon {
+            opacity: 0;
+            margin-right: 8px;
+            color: green;
+            transition: opacity 0.5s;
+        }
+
+        #chosenOptions li.checked {
+            color: green;
+        }
+
+            #chosenOptions li.checked .check-icon {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body>
+    <!-- Blurred Overlay (Glass) -->
+    <div id="loadingOverlay">
+        <div class="overlay-container">
+            <!-- Left Column: Title & Subtitle -->
+            <div class="left-panel">
+                <h1>Generating Your Report</h1>
+                <p>Analyzing the following options...</p>
+                <p>Thank you for your patience</p>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="Weight">Weight (kg)</label>
-                    <input type="number" name="Weight" id="Weight" class="form-control" placeholder="Enter your weight" required />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="Height">Height (cm)</label>
-                    <input type="number" name="Height" id="Height" class="form-control" placeholder="Enter your height" required />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="Allergies">Allergies</label>
-                    <input type="text" name="Allergies" id="Allergies" class="form-control" placeholder="e.g., peanuts, gluten" />
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="MedicalConditions">Medical Conditions</label>
-                    <input type="text" name="MedicalConditions" id="MedicalConditions" class="form-control" placeholder="Optional: specify any known conditions" />
-                </div>
-            </div>
+            <!-- Right Column: Vertical list of options -->
+            <ul id="chosenOptions"></ul>
         </div>
+    </div>
 
-        <!-- Lab Report Upload Section -->
-        <div class="form-group mt-3">
-            <label for="file"><strong>Upload Your Lab Report Image</strong></label>
-            <input type="file" name="file" id="file" accept="image/*" class="form-control-file" required />
-        </div>
+    <!-- Header Section -->
+    <header class="main-header">
+        <nav class="header-nav">
+            <div class="d-flex align-items-center">
+                <img src="~/logo-removebg-preview.png" alt="BioCheck AI Logo" class="brand-logo" />
+                <span class="brand-text">BioCheck AI</span>
+            </div>
+            <div class="nav-controls d-flex align-items-center">
+                <!-- Dark Mode Toggle -->
+                <button class="btn btn-light" aria-label="Toggle Dark Mode" id="toggleDarkMode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-light ml-2" aria-label="About">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </button>
+                <button class="btn btn-light ml-2" aria-label="Contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
+                <button class="btn btn-light ml-2" aria-label="Login">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Analysis Options Section -->
-        <div class="analysis-options">
-            <h3>Select Analysis Options</h3>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="Options" value="nutrition" id="nutrition">
-                <label class="form-check-label" for="nutrition">
-                    Generate Nutrition Suggestions (based on weight, age, allergies, and lab report)
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="Options" value="fitness" id="fitness">
-                <label class="form-check-label" for="fitness">
-                    Generate Fitness Plan (customized to your profile)
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="Options" value="details" id="details">
-                <label class="form-check-label" for="details">
-                    Complete Details About Test (in-depth lab report analysis)
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="Options" value="summary" id="summary">
-                <label class="form-check-label" for="summary">
-                    Summary Analysis (quick overview of findings)
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="Options" value="generalAdvice" id="generalAdvice">
-                <label class="form-check-label" for="generalAdvice">
-                    General Health Insights (personalized tips and recommendations)
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="Options" value="furtherTesting" id="furtherTesting">
-                <label class="form-check-label" for="furtherTesting">
-                    Suggestions for Further Testing (what additional tests might be needed)
-                </label>
-            </div>
-        </div>
+    <!-- Main Content Container -->
+    <main class="container my-4">
+        <form class="health-assessment-form" id="healthForm" method="post" enctype="multipart/form-data" action="/Home/AnalyzeTest">
 
-        <!-- Submit Button -->
-        <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary">Submit for Analysis</button>
-        </div>
-    </form>
-</div>
+            <!-- Upload Section -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-file-upload"></i>Upload Medical Reports
+                </div>
+                <div class="card-body" id="fileUpload">
+                    <div class="drag-drop-zone"
+                         role="region"
+                         aria-labelledby="dropZoneTitle">
+                        <i class="fas fa-cloud-upload-alt upload-icon fa-2x"></i>
+                        <h4 id="dropZoneTitle" class="mt-2">Upload Medical Reports</h4>
+                        <p class="mb-0">Supported formats: PDF, JPG, PNG (Max 10 files)</p>
+                    </div>
+                    <!-- Hidden File Input -->
+                    <input type="file"
+                           id="hiddenFileInput"
+                           name="files"
+                           accept="image/*,application/pdf"
+                           style="display: none;"
+                           multiple />
+                    <!-- Display selected files -->
+                    <div id="selectedFiles"></div>
+                </div>
+            </div>
+
+            <!-- Optional Health Metrics -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-user-md"></i>Optional Health Metrics
+                </div>
+                <div class="card-body">
+                    <!-- Physical Metrics -->
+                    <h5><i class="fas fa-heartbeat text-danger"></i>Physical Metrics</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="weight" class="form-label">Weight (kg)</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="weight"
+                                   name="weight"
+                                   step="0.1"
+                                   placeholder="e.g. 70" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="height" class="form-label">Height (cm)</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="height"
+                                   name="height"
+                                   placeholder="e.g. 170" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="bodyFat" class="form-label">Body Fat (%)</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="bodyFat"
+                                   name="bodyFat"
+                                   step="0.1"
+                                   placeholder="e.g. 20" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="age"
+                                   name="age"
+                                   placeholder="e.g. 30" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cholesterol" class="form-label">Cholesterol (mg/dL)</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="cholesterol"
+                                   name="cholesterol"
+                                   placeholder="e.g. 200" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="alcohol" class="form-label">Alcohol Consumption (units/week)</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="alcohol"
+                                   name="alcohol"
+                                   placeholder="e.g. 3" />
+                        </div>
+                    </div>
+
+                    <!-- Lifestyle -->
+                    <h5><i class="fas fa-user text-primary"></i>Lifestyle</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label d-block">Gender</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       id="Male"
+                                       name="gender"
+                                       value="Male" />
+                                <label class="form-check-label" for="Male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       id="Female"
+                                       name="gender"
+                                       value="Female" />
+                                <label class="form-check-label" for="Female">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       id="Other"
+                                       name="gender"
+                                       value="Other" />
+                                <label class="form-check-label" for="Other">Other</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label d-block">Smoking Status</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       id="smokerYes"
+                                       name="smoking"
+                                       value="yes" />
+                                <label class="form-check-label" for="smokerYes">Smoker</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input"
+                                       type="radio"
+                                       id="smokerNo"
+                                       name="smoking"
+                                       value="no" />
+                                <label class="form-check-label" for="smokerNo">Non-smoker</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="allergies" class="form-label">Allergies</label>
+                        <textarea class="form-control"
+                                  id="allergies"
+                                  name="allergies"
+                                  rows="2"
+                                  placeholder="List allergies..."></textarea>
+                    </div>
+
+                    <!-- Additional Health & Fitness -->
+                    <h5><i class="fas fa-dumbbell text-warning"></i>Additional Health &amp; Fitness</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="mentalHealth" class="form-label">Mental Health Status</label>
+                            <select id="mentalHealth" name="mentalHealth" class="form-control">
+                                <option value="none">none</option>
+                                <option value="excellent">Excellent</option>
+                                <option value="good">Good</option>
+                                <option value="fair">Fair</option>
+                                <option value="poor">Poor</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="weekWorkouts" class="form-label">Workouts (Weekly)</label>
+                            <select id="weekWorkouts" name="weekWorkouts" class="form-control">
+                                <option value="none">none</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <h5><i class="fas fa-map-marker-alt text-success"></i>Location</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="country"
+                                   name="country"
+                                   placeholder="Enter Country" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="city"
+                                   name="city"
+                                   placeholder="Enter City" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="additionalInfo" class="form-label">Additional Info</label>
+                        <textarea class="form-control"
+                                  id="additionalInfo"
+                                  name="additionalInfo"
+                                  rows="2"
+                                  placeholder="Anything else?"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generate Reports -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-file-medical-alt"></i>Generate Reports
+                </div>
+                <div class="card-body">
+                    <div id="reportAccordion" class="accordion">
+                        <!-- Essential Report Details -->
+                        <div class="card">
+                            <div class="card-header" id="headingEssential">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseEssential"
+                                            aria-expanded="true"
+                                            aria-controls="collapseEssential">
+                                        Essential Report Details
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseEssential"
+                                 class="collapse show"
+                                 aria-labelledby="headingEssential"
+                                 data-parent="#reportAccordion">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="details"
+                                               name="reports"
+                                               value="details" />
+                                        <label class="form-check-label" for="details">
+                                            Complete Details About Test (in-depth lab report analysis)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="summary"
+                                               name="reports"
+                                               value="summary" />
+                                        <label class="form-check-label" for="summary">
+                                            Summary Analysis (quick overview of findings)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="generalAdvice"
+                                               name="reports"
+                                               value="generalAdvice" />
+                                        <label class="form-check-label" for="generalAdvice">
+                                            General Health Insights (personalized tips &amp; recommendations)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="furtherTesting"
+                                               name="reports"
+                                               value="furtherTesting" />
+                                        <label class="form-check-label" for="furtherTesting">
+                                            Suggestions for Further Testing (additional tests that might be needed)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Personalized Recommendations -->
+                        <div class="card">
+                            <div class="card-header" id="headingPersonalized">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapsePersonalized"
+                                            aria-expanded="false"
+                                            aria-controls="collapsePersonalized">
+                                        Personalized Recommendations
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapsePersonalized"
+                                 class="collapse"
+                                 aria-labelledby="headingPersonalized"
+                                 data-parent="#reportAccordion">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="nutrition"
+                                               name="reports"
+                                               value="nutrition" />
+                                        <label class="form-check-label" for="nutrition">
+                                            Generate Nutrition Suggestions (based on weight, age, allergies, and lab report)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="fitness"
+                                               name="reports"
+                                               value="fitness" />
+                                        <label class="form-check-label" for="fitness">
+                                            Generate Fitness Plan (customized to your profile)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="supplementRecommendations"
+                                               name="reports"
+                                               value="supplementRecommendations" />
+                                        <label class="form-check-label" for="supplementRecommendations">
+                                            Personalized Supplement Recommendations (based on deficiencies)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cardiovascular & Metabolic -->
+                        <div class="card">
+                            <div class="card-header" id="headingCardio">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseCardio"
+                                            aria-expanded="false"
+                                            aria-controls="collapseCardio">
+                                        Cardiovascular &amp; Metabolic
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseCardio"
+                                 class="collapse"
+                                 aria-labelledby="headingCardio"
+                                 data-parent="#reportAccordion">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="cardioRisk"
+                                               name="reports"
+                                               value="cardioRisk" />
+                                        <label class="form-check-label" for="cardioRisk">
+                                            Cardiovascular Risk Assessment (cholesterol, blood pressure, heart health markers)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="metabolicHealth"
+                                               name="reports"
+                                               value="metabolicHealth" />
+                                        <label class="form-check-label" for="metabolicHealth">
+                                            Metabolic Health Evaluation (blood sugar, insulin, lipid profiles)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="diabetesRisk"
+                                               name="reports"
+                                               value="diabetesRisk" />
+                                        <label class="form-check-label" for="diabetesRisk">
+                                            Diabetes Risk Assessment (fasting glucose, HbA1c, insulin levels)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="electrolyteBalance"
+                                               name="reports"
+                                               value="electrolyteBalance" />
+                                        <label class="form-check-label" for="electrolyteBalance">
+                                            Electrolyte Balance Analysis (sodium, potassium, chloride, etc.)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Specific Health Markers -->
+                        <div class="card">
+                            <div class="card-header" id="headingMarkers">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseMarkers"
+                                            aria-expanded="false"
+                                            aria-controls="collapseMarkers">
+                                        Specific Health Markers
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseMarkers"
+                                 class="collapse"
+                                 aria-labelledby="headingMarkers"
+                                 data-parent="#reportAccordion">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="inflammatoryMarkers"
+                                               name="reports"
+                                               value="inflammatoryMarkers" />
+                                        <label class="form-check-label" for="inflammatoryMarkers">
+                                            Inflammatory Markers (CRP, ESR, etc.)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="hormonalBalance"
+                                               name="reports"
+                                               value="hormonalBalance" />
+                                        <label class="form-check-label" for="hormonalBalance">
+                                            Hormonal Balance Evaluation (thyroid, reproductive, etc.)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="organFunction"
+                                               name="reports"
+                                               value="organFunction" />
+                                        <label class="form-check-label" for="organFunction">
+                                            Organ Function Assessment (liver, kidney, etc.)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="immuneInsights"
+                                               name="reports"
+                                               value="immuneInsights" />
+                                        <label class="form-check-label" for="immuneInsights">
+                                            Immune System Insights (immune markers, tips to boost immunity)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="boneHealth"
+                                               name="reports"
+                                               value="boneHealth" />
+                                        <label class="form-check-label" for="boneHealth">
+                                            Bone Health Analysis (vitamin D, parathyroid hormone)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="digestiveHealth"
+                                               name="reports"
+                                               value="digestiveHealth" />
+                                        <label class="form-check-label" for="digestiveHealth">
+                                            Digestive Health Evaluation (gut inflammation, GI function)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="oxidativeStress"
+                                               name="reports"
+                                               value="oxidativeStress" />
+                                        <label class="form-check-label" for="oxidativeStress">
+                                            Oxidative Stress &amp; Antioxidant Status
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Additional Assessments -->
+                        <div class="card">
+                            <div class="card-header" id="headingAdditional">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseAdditional"
+                                            aria-expanded="false"
+                                            aria-controls="collapseAdditional">
+                                        Additional Assessments
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseAdditional"
+                                 class="collapse"
+                                 aria-labelledby="headingAdditional"
+                                 data-parent="#reportAccordion">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="sleepQuality"
+                                               name="reports"
+                                               value="sleepQuality" />
+                                        <label class="form-check-label" for="sleepQuality">
+                                            Sleep Quality &amp; Hormonal Rhythm
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="mentalCognitive"
+                                               name="reports"
+                                               value="mentalCognitive" />
+                                        <label class="form-check-label" for="mentalCognitive">
+                                            Mental &amp; Cognitive Health (mood, memory, etc.)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="skinHairHealth"
+                                               name="reports"
+                                               value="skinHairHealth" />
+                                        <label class="form-check-label" for="skinHairHealth">
+                                            Skin &amp; Hair Health Insights (vitamins, minerals)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="chronicDiseaseRisk"
+                                               name="reports"
+                                               value="chronicDiseaseRisk" />
+                                        <label class="form-check-label" for="chronicDiseaseRisk">
+                                            Chronic Disease Risk Analysis
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Final Options -->
+                        <div class="card">
+                            <div class="card-header" id="headingFinal">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseFinal"
+                                            aria-expanded="false"
+                                            aria-controls="collapseFinal">
+                                        Final Options
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFinal"
+                                 class="collapse"
+                                 aria-labelledby="headingFinal"
+                                 data-parent="#reportAccordion">
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="lifestyleStress"
+                                               name="reports"
+                                               value="lifestyleStress" />
+                                        <label class="form-check-label" for="lifestyleStress">
+                                            Lifestyle &amp; Stress Management (sleep, stress, wellness)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="doctorSuggestion"
+                                               name="reports"
+                                               value="doctorSuggestion" />
+                                        <label class="form-check-label" for="doctorSuggestion">
+                                            Suggest a Doctor (based on location &amp; health profile)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               id="videoHelp"
+                                               name="reports"
+                                               value="videoHelp" />
+                                        <label class="form-check-label" for="videoHelp">
+                                            Provide a helpful video (recipes, tips, exercises)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End accordion -->
+                </div><!-- End card-body -->
+            </div><!-- End card -->
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-chart-line"></i>
+                    Generate Comprehensive Report
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- jQuery & Bootstrap Bundle -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // On page load, read dark mode preference from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleDarkModeBtn = document.getElementById('toggleDarkMode');
+            const icon = toggleDarkModeBtn.querySelector('i');
+
+            // Check if user previously set dark mode
+            let isDarkMode = localStorage.getItem('darkMode') === 'true';
+            applyDarkMode(isDarkMode);
+
+            // Toggle event
+            toggleDarkModeBtn.addEventListener('click', function() {
+                const currentlyDark = document.body.classList.contains('dark-mode');
+                isDarkMode = !currentlyDark;
+                applyDarkMode(isDarkMode);
+            });
+
+            function applyDarkMode(enable) {
+                document.body.classList.toggle('dark-mode', enable);
+                if (enable) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+                localStorage.setItem('darkMode', enable.toString());
+            }
+        });
+
+        /* File Selection & Removal */
+        const hiddenFileInput = document.getElementById('hiddenFileInput');
+        const selectedFilesContainer = document.getElementById('selectedFiles');
+        let selectedFileArray = [];
+
+        document.querySelector('.drag-drop-zone').addEventListener('click', () => {
+            hiddenFileInput.click();
+        });
+
+        hiddenFileInput.addEventListener('change', handleFileSelection);
+
+        function handleFileSelection() {
+            const files = Array.from(hiddenFileInput.files);
+
+            if (files.length > 10 || selectedFileArray.length + files.length > 10) {
+                alert('You can only upload up to 10 files total.');
+                return;
+            }
+
+            selectedFileArray = selectedFileArray.concat(files);
+            selectedFileArray = removeDuplicateFiles(selectedFileArray);
+
+            updateFileInput();
+            refreshFileDisplay();
+        }
+
+        function refreshFileDisplay() {
+            selectedFilesContainer.innerHTML = '';
+
+            selectedFileArray.forEach((file, index) => {
+                const fileItem = document.createElement('div');
+                fileItem.classList.add('file-item', 'd-flex', 'align-items-center', 'justify-content-between');
+
+                const fileNameSpan = document.createElement('span');
+                fileNameSpan.textContent = file.name;
+
+                const removeIcon = document.createElement('i');
+                removeIcon.classList.add('fas', 'fa-times', 'text-danger', 'remove-file');
+                removeIcon.title = 'Remove file';
+                removeIcon.style.cursor = 'pointer';
+                removeIcon.addEventListener('click', () => {
+                    removeFile(index);
+                });
+
+                fileItem.appendChild(fileNameSpan);
+                fileItem.appendChild(removeIcon);
+                selectedFilesContainer.appendChild(fileItem);
+            });
+        }
+
+        function removeFile(index) {
+            selectedFileArray.splice(index, 1);
+            updateFileInput();
+            refreshFileDisplay();
+        }
+
+        function updateFileInput() {
+            const dataTransfer = new DataTransfer();
+            selectedFileArray.forEach((f) => {
+                dataTransfer.items.add(f);
+            });
+            hiddenFileInput.files = dataTransfer.files;
+        }
+
+        function removeDuplicateFiles(fileArray) {
+            const unique = [];
+            const names = new Set();
+            for (let file of fileArray) {
+                if (!names.has(file.name)) {
+                    names.add(file.name);
+                    unique.push(file);
+                }
+            }
+            return unique;
+        }
+
+        /* Overlay + Checking Items on Submit */
+        document.getElementById('healthForm').addEventListener('submit', function () {
+            const selectedOptions = [];
+            const allChecks = document.querySelectorAll('input[name="reports"]:checked');
+
+            allChecks.forEach((check) => {
+                let labelText = check.closest('.form-check').querySelector('label').innerText.trim();
+                if (labelText.indexOf('(') !== -1) {
+                    labelText = labelText.split('(')[0].trim();
+                }
+                selectedOptions.push(labelText);
+            });
+
+            let listHtml = '';
+            selectedOptions.forEach((opt, index) => {
+                if (index < 9) {
+                    listHtml += "<li><i class='fas fa-check check-icon'></i>" + opt + '</li>';
+                } else {
+                    listHtml += "<li style='display: none;'><i class='fas fa-check check-icon'></i>" + opt + '</li>';
+                }
+            });
+            document.getElementById('chosenOptions').innerHTML = listHtml;
+
+            // Show overlay
+            document.getElementById('loadingOverlay').style.display = 'block';
+
+            // Animate check items one by one
+            setTimeout(function () {
+                const liElements = document.querySelectorAll('#chosenOptions li');
+                liElements.forEach((li, idx) => {
+                    setTimeout(function () {
+                        li.classList.add('checked');
+                    }, idx * 3000);
+                });
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

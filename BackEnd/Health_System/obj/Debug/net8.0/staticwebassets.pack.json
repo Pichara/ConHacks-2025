@@ -249,6 +249,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo-removebg-preview.png",
+      "PackagePath": "staticwebassets\\logo-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo.png",
+      "PackagePath": "staticwebassets\\logo.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Health_System.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

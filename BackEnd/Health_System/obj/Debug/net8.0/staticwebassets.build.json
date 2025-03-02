@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pk8Zc4Qj/OvKLbiFWvv4411i906vTut01iW1xH2nRko=",
+  "Hash": "Ub2VPOjYdpmOjJ8A+lYhZ71Igq08dONROyAokdgWbHU=",
   "Source": "Health_System",
   "BasePath": "_content/Health_System",
   "Mode": "Default",
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gn5u5n1e8e",
-      "Integrity": "HOnAJfjj0HljgYA+CDaWJuuxXxKxgn8reoXXdwE0hxw=",
+      "Fingerprint": "smwx20eveo",
+      "Integrity": "jPrpgqLBlwq3IjFzg9ww4KaG7yg98GZbxbfsHkraNxM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
@@ -1338,6 +1338,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo.png",
+      "SourceId": "Health_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\",
+      "BasePath": "_content/Health_System",
+      "RelativePath": "logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d21fmuz8ki",
+      "Integrity": "JfF658eUYzYo9PTDNE1SuuOgu51undzCcFGsSlAbNhQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo-removebg-preview.png",
+      "SourceId": "Health_System",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\",
+      "BasePath": "_content/Health_System",
+      "RelativePath": "logo-removebg-preview#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ppygga3y9h",
+      "Integrity": "Q8Tg49RHnse5ufg1vzNogIwMxQ1pC3OggxMJYPO0Nqw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo-removebg-preview.png"
     }
   ],
   "Endpoints": [
@@ -1434,7 +1476,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4268"
+          "Value": "5141"
         },
         {
           "Name": "Content-Type",
@@ -1442,11 +1484,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HOnAJfjj0HljgYA+CDaWJuuxXxKxgn8reoXXdwE0hxw=\""
+          "Value": "\"jPrpgqLBlwq3IjFzg9ww4KaG7yg98GZbxbfsHkraNxM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 01 Mar 2025 05:49:23 GMT"
+          "Value": "Sat, 01 Mar 2025 10:16:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1456,12 +1498,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HOnAJfjj0HljgYA+CDaWJuuxXxKxgn8reoXXdwE0hxw="
+          "Value": "sha256-jPrpgqLBlwq3IjFzg9ww4KaG7yg98GZbxbfsHkraNxM="
         }
       ]
     },
     {
-      "Route": "css/styles.gn5u5n1e8e.css",
+      "Route": "css/styles.smwx20eveo.css",
       "AssetFile": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\css\\styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1471,7 +1513,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4268"
+          "Value": "5141"
         },
         {
           "Name": "Content-Type",
@@ -1479,11 +1521,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HOnAJfjj0HljgYA+CDaWJuuxXxKxgn8reoXXdwE0hxw=\""
+          "Value": "\"jPrpgqLBlwq3IjFzg9ww4KaG7yg98GZbxbfsHkraNxM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 01 Mar 2025 05:49:23 GMT"
+          "Value": "Sat, 01 Mar 2025 10:16:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1493,7 +1535,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gn5u5n1e8e"
+          "Value": "smwx20eveo"
         },
         {
           "Name": "label",
@@ -1501,7 +1543,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HOnAJfjj0HljgYA+CDaWJuuxXxKxgn8reoXXdwE0hxw="
+          "Value": "sha256-jPrpgqLBlwq3IjFzg9ww4KaG7yg98GZbxbfsHkraNxM="
         }
       ]
     },
@@ -6504,6 +6546,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "logo.d21fmuz8ki.png",
+      "AssetFile": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49854"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JfF658eUYzYo9PTDNE1SuuOgu51undzCcFGsSlAbNhQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Mar 2025 10:10:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d21fmuz8ki"
+        },
+        {
+          "Name": "label",
+          "Value": "logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JfF658eUYzYo9PTDNE1SuuOgu51undzCcFGsSlAbNhQ="
+        }
+      ]
+    },
+    {
+      "Route": "logo.png",
+      "AssetFile": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "49854"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JfF658eUYzYo9PTDNE1SuuOgu51undzCcFGsSlAbNhQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Mar 2025 10:10:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JfF658eUYzYo9PTDNE1SuuOgu51undzCcFGsSlAbNhQ="
+        }
+      ]
+    },
+    {
+      "Route": "logo-removebg-preview.png",
+      "AssetFile": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo-removebg-preview.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "143363"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q8Tg49RHnse5ufg1vzNogIwMxQ1pC3OggxMJYPO0Nqw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Mar 2025 14:43:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q8Tg49RHnse5ufg1vzNogIwMxQ1pC3OggxMJYPO0Nqw="
+        }
+      ]
+    },
+    {
+      "Route": "logo-removebg-preview.ppygga3y9h.png",
+      "AssetFile": "C:\\Users\\moham\\OneDrive\\Desktop\\Health_System\\Health_System\\wwwroot\\logo-removebg-preview.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "143363"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q8Tg49RHnse5ufg1vzNogIwMxQ1pC3OggxMJYPO0Nqw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Mar 2025 14:43:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ppygga3y9h"
+        },
+        {
+          "Name": "label",
+          "Value": "logo-removebg-preview.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q8Tg49RHnse5ufg1vzNogIwMxQ1pC3OggxMJYPO0Nqw="
         }
       ]
     }
