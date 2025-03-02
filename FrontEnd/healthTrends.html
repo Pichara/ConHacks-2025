@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BioCheck AI - Health Trends</title>
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="header-nav">
+      <div class="logo-container">
+        <div style="display: flex; align-items: center;">
+          <!-- Removed negative margin -->
+          <img
+            src="logo.png"
+            alt="BioCheck AI Logo"
+            class="brand-logo"
+            style="width: 75px; height: auto;"
+          />
+          <span
+            style="
+              font-size: 24px;
+              font-weight: bold;
+              font-family: 'Raleway', sans-serif;
+              margin-left: 15px;
+              color: #57a9e3;
+            "
+            >BioCheck AI</span
+          >
+        </div>
+      </div>
+      <div class="nav-controls">
+        <button
+          class="nav-btn"
+          aria-label="Dashboard"
+          onclick="window.location.href='homePage.html'"
+        >
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </button>
+        <button
+          class="nav-btn"
+          aria-label="New Report"
+          onclick="window.location.href='firstPage.html'"
+        >
+          <i class="fas fa-plus-circle"></i>
+          <span>New Report</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content-container">
+    <section class="trends-section">
+      <h1>Health Trends</h1>
+      <p>Analyze your health improvements over time and track key metrics.</p>
+
+      <!-- Trend Cards -->
+      <div class="trend-cards">
+        <!-- Weight Trend -->
+        <div class="trend-card">
+          <h3>Weight Trend</h3>
+          <p>Your weight has decreased by 2.3kg over the past month.</p>
+          <i class="fas fa-weight"></i>
+        </div>
+
+        <!-- Activity Level -->
+        <div class="trend-card">
+          <h3>Activity Level</h3>
+          <p>Your activity level is at 85% of your weekly goal.</p>
+          <i class="fas fa-running"></i>
+        </div>
+
+        <!-- Cholesterol -->
+        <div class="trend-card">
+          <h3>Cholesterol</h3>
+          <p>Your cholesterol levels have improved by 10% compared to last quarter.</p>
+          <i class="fas fa-heartbeat"></i>
+        </div>
+
+        <!-- Nutrition -->
+        <div class="trend-card">
+          <h3>Nutrition</h3>
+          <p>Your balanced diet score increased by 15% since your last report.</p>
+          <i class="fas fa-apple-alt"></i>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 BioCheck AI. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact Support</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

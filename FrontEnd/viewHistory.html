@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioCheck AI - Report History</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="header-nav">
+      <div class="logo-container">
+        <div style="display: flex; align-items: center;">
+          <img src="logo.png" alt="BioCheck AI Logo" class="brand-logo" style="width: 75px; height: auto; margin-left: -150px;">
+          <span style="font-size: 24px; font-weight: bold; font-family: 'Raleway', sans-serif; margin-left: 15px; color: #57a9e3;">BioCheck AI</span>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <button class="nav-btn" aria-label="Dashboard" onclick="window.location.href='homePage.html'">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-btn" aria-label="New Report" onclick="window.location.href='firstPage.html'">
+          <i class="fas fa-plus-circle"></i>
+          <span>New Report</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content-container">
+    <section class="history-section">
+      <h1>Report History</h1>
+      <div class="report-list">
+        <!-- Example Report Card -->
+        <div class="report-card">
+          <div class="report-header">
+            <h3>Blood Analysis Report</h3>
+            <span class="report-date">June 12, 2024</span>
+          </div>
+          <div class="report-summary">
+            <p>Improved cholesterol levels; maintain exercise routine.</p>
+            <div class="report-status positive">
+              <i class="fas fa-check-circle"></i>
+              12% improvement
+            </div>
+          </div>
+        </div>
+        <!-- Another Report Card -->
+        <div class="report-card">
+          <div class="report-header">
+            <h3>Fitness Assessment</h3>
+            <span class="report-date">June 5, 2024</span>
+          </div>
+          <div class="report-summary">
+            <p>Increased cardiovascular efficiency and muscle strength.</p>
+            <div class="report-status neutral">
+              <i class="fas fa-info-circle"></i>
+              Stable performance
+            </div>
+          </div>
+        </div>
+        <!-- Add more report cards as needed -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 BioCheck AI. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
