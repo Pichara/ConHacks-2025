@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj": {}
+    "c:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj": {
+    "c:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
+        "projectUniqueName": "c:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
         "projectName": "Health_System",
-        "projectPath": "C:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
+        "projectPath": "c:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\Health_System.csproj",
         "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\obj\\",
+        "outputPath": "c:\\Users\\lukas\\OneDrive\\Documentos\\GitHub\\ConHacks-2025\\BackEnd\\Health_System\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
